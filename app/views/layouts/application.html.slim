@@ -9,7 +9,7 @@ html lang="en"
 
     /! Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
-      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
     = favicon_link_tag
     = javascript_include_tag "application"
@@ -21,12 +21,13 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="#"PsaraInstitute
+          a.navbar-brand PsaraInstitute
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              li= link_to "組織概要", "static_pages/organization"
-              li= link_to "事業概要", "static_pages/company"
-              li= link_to "お問い合わせ", "inquiry/index"
+              li= link_to "トップ", root_path
+              li= link_to "組織概要", static_pages_organization_path
+              li= link_to "事業概要", static_pages_company_path
+              li= link_to "お問い合わせ", inquiry_path
 
     .container
       .row
