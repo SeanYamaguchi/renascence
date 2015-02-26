@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
+  get 'static_pages/logo'
+
+  get 'static_pages/job'
+
   root to: 'static_pages#company'
   
   get 'inquiry' => 'inquiry#index'              # 入力画面

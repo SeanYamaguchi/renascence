@@ -23,7 +23,10 @@ html lang="en"
             span.icon-bar
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              li= link_to "プサラ・インスティテュート", static_pages_company_path
+              li= link_to image_tag("psara.png", width: 40, height: 40)
+              li= link_to "プサラ・インスティテュート", static_pages_home_path
+              li= link_to "ロゴマークの由来", static_pages_logo_path
+              li= link_to "業務概要", static_pages_job_path
               li= link_to "事業概要", root_path
               li= link_to "お問い合わせ", inquiry_path
 
@@ -35,4 +38,5 @@ html lang="en"
         .col-lg-3
 
       footer
-        p Copyrights (C) 2015 Psara Institute Ltd. All rights reserved
+        .text-right 
+          p Copyrights (C) 2015 Psara Institute Ltd. All rights reserved
