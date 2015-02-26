@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
-  root to: 'static_pages#home'
+  root to: 'static_pages#company'
   
   get 'inquiry' => 'inquiry#index'              # 入力画面
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
