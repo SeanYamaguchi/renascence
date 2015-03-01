@@ -1,12 +1,12 @@
 ul class="nav nav-tabs"
   li role="presentation" class="dropdown"
     a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample"
-      = render 'about_psara'
+      = render 'message'
 
 br
 <!-- Button trigger modal -->
 button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"
-  Launch 業務概要へ
+  Launch サービスへ
 
 <!-- Modal -->
 .modal.fade id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
@@ -15,7 +15,7 @@ button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-tar
       .modal-header
         button type="button" class="close" data-dismiss="modal" aria-label="Close"
           span aria-hidden="true"&times;
-        h4.modal-title id="myModalLabel" 業務概要
+        h4.modal-title id="myModalLabel" サービス
         .modal-body
           = render 'jobs'
       .modal-footer
