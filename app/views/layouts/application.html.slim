@@ -9,16 +9,10 @@ html lang="en"
 
     /! Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
-      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
-    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
-    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
-    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
-    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
-    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = favicon_link_tag
     = javascript_include_tag "application"
-
-
 
   body
     .navbar.navbar-default.navbar-static-top
@@ -27,19 +21,26 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="/"PsaraInstitute
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              li= link_to "事業概要", static_pages_company_path
-              li= link_to "組織概要", static_pages_organization_path
+              li= link_to image_tag("psara.png", width: 40, height: 40)
+              li= link_to "会員登録", new_user_registration_path
+              li= link_to "ログイン", new_user_session_path
+              li= link_to "プサラ・インスティテュート", static_pages_home_path
+              li= link_to "ロゴマークの由来", static_pages_logo_path
+              li= link_to "サービス", static_pages_job_path
+              li= link_to "メッセージ", root_path
               li= link_to "お問い合わせ", static_pages_contact_path
 
     .container
       .row
         .col-lg-9
           = bootstrap_flash
+          .notce= notice
+          .alert= alert
           = yield
         .col-lg-3
 
       footer
-        p Copyrights (C) 2015 Psara Institute Ltd. All rights reserved
+        .text-right 
+          p Copyrights (C) 2015 Psara Institute Ltd. All rights reserved.
