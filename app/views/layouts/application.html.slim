@@ -15,7 +15,7 @@ html lang="en"
     = javascript_include_tag "application"
 
   body
-    .navbar.navbar-default.navbar-static-top
+    .navbar.navbar-default.navbar-static-top.navbar-fixed-top
         .container
           button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
             span.icon-bar
@@ -30,7 +30,7 @@ html lang="en"
               li= link_to "ロゴマークの由来", static_pages_logo_path
               li= link_to "サービス", static_pages_job_path
               li= link_to "メッセージ", root_path
-              li= link_to "お問い合わせ", static_pages_contact_path
+              li.active= link_to "お問い合わせ", static_pages_contact_path
 
     .container
       .row
@@ -41,6 +41,6 @@ html lang="en"
           = yield
         .col-lg-3
 
-      footer
-        .text-right 
+      footer.navbar-fixed-bottom
+        .text-right
           p Copyrights (C) 2015 Psara Institute Ltd. All rights reserved.
