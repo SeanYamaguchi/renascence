@@ -49,3 +49,5 @@ gem 'spring',        group: :development
 gem 'slim-rails'
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => "bootstrap3"
+# For User Account
+gem 'devise'
