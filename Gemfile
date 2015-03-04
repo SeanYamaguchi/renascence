@@ -51,3 +51,5 @@ gem 'slim-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => "bootstrap3"
 # For devise
 gem 'devise'
+# Cloudinary
+gem 'cloudinary'
