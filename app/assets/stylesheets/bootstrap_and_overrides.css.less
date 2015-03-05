@@ -35,7 +35,7 @@ top-page-slide-show {
 }
 
 body {
-	margin-top: 150px;
+	margin-top: 50px;
 }
 
 .container {
@@ -51,41 +51,12 @@ body {
 	background-color: @color;
 }
 
-body {
-background-image: url('/assets/image1.png'); background-attachment: fixed;
-background-size: cover;
-width: 100%;
-height: 100%;
--webkit-animation: changeBackground 15s ease-in-out infinite alternate;
--moz-animation: changeBackground 15s ease-in-out infinite alternate;
- -o-animation: changeBackground 15s ease-in-out infinite alternate; animation:
-  changeBackground 15s ease-in-out infinite alternate;
-margin-bottom: 100px;
-}
+.slide-show {
 
-@-webkit-keyframes changeBackground {
-from { background-image: url('/assets/image1.png');} 
-	25% { background-image: url('/assets/image2.png');} 
-	50% { background-image: url('/assets/image3.png');} 
-	75% { background-image: url('/assets/image7.png');}
-}
-@-moz-keyframes changeBackground {
-	from { background-image: url('/assets/image1.png');} 
-	17% { background-image: url('/assets/image2.png');} 
-	34% { background-image: url('/assets/image3.png');} 
-	to { background-image: url('/assets/image7.png');}
-}
-@-o-keyframes changeBackground {
-from { background-image: url('/assets/image1.png');} 
-	17% { background-image: url('/assets/image2.png');} 
-	34% { background-image: url('/assets/image3.png');} 
-	to { background-image: url('/assets/image7.png');}
-}
-@keyframes changeBackground {
-from { background-image: url('/assets/image1.png');} 
-	17% { background-image: url('/assets/image2.png');} 
-	34% { background-image: url('/assets/image3.png');} 
-	to { background-image: url('/assets/image7.png');}
+.carousel-inner {
+	width: 100%;
+	height: 500px;
+    }
 }
 
 footer {
