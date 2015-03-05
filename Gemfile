@@ -51,3 +51,10 @@ gem 'slim-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => "bootstrap3"
 # For devise
 gem 'devise'
+# Cloudinary
+gem 'cloudinary'
+
+  # For uploderruby
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'streamio-ffmpeg'
