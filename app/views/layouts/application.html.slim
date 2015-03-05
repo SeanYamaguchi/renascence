@@ -39,15 +39,15 @@ html lang="en"
       <!-- カルーセルのスライドするコンテンツ部分 -->
         .carousel-inner
           .item.active
-            =image_tag("image1.png", :size => "1500×5") 
+            .text-center=image_tag("image1.png", :size => "1500") 
             .container
               .carousel-caption
           .item
-            =image_tag("image2.png", :size => "1500×500")
+            .text-center=image_tag("image2.png", :size => "1500")
             .container
               .carousel-caption
           .item
-            =image_tag("image3.png", :size => "1500×500")
+            .text-center=image_tag("image3.png", :size => "1500")
             .container
               .carousel-caption
         a.left.carousel-control href="#myCarousel" role="buttun" data-slide="prev"
