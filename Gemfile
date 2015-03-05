@@ -53,3 +53,8 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'devise'
 # Cloudinary
 gem 'cloudinary'
+
+  # For uploderruby
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'streamio-ffmpeg'

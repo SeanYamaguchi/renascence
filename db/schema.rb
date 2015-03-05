@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20150303102438) do
+
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -38,6 +39,16 @@ ActiveRecord::Schema.define(version: 20150303102438) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   add_index "admin_users", ["unlock_token"], name: "index_admin_users_on_unlock_token", unique: true
+
+  create_table "posts", force: true do |t|
+    t.date     "date"
+    t.string   "subject"
+    t.text     "body"
+    t.string   "picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "video"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
