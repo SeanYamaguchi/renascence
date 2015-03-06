@@ -1,3 +1,5 @@
+
+
 <h2 class="h2-title">新着記事 <small class="pull-right">
 <% if admin_user_signed_in? %>
 
@@ -33,4 +35,15 @@
   </div>
 </div>
 <% end %>
-</div>
+
+<%# form_for の代わりに search_form_for を使うことで検索フォームを作成 %>
+<%= search_form_for @q do |f| %>
+
+  <%# start 特定の文字列で始まる商品名で検索 %>
+  <%= f.label :subject, "タイトル" %>
+  <%= f.search_field :subject %>
+  <%= f.label :body, "記事内容" %>
+  <%= f.search_field :body %>
+    <%# 検索ボタン %>
+  <%= f.submit %>
+<% end %>

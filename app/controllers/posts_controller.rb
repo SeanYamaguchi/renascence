@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
-#  before_action :authenticate_admin_user!, except: [:show, :index]
+  before_action :authenticate_admin_user!, except: [:show, :index]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @q = Post.search(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
   # GET /posts/1

@@ -58,3 +58,5 @@ gem 'cloudinary'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'streamio-ffmpeg'
+
+gem "ransack"
