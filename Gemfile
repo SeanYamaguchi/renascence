@@ -53,3 +53,5 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'devise'
 # Cloudinary
 gem 'cloudinary'
+
+gem "ransack"

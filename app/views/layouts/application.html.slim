@@ -31,7 +31,45 @@ html lang="en"
               li= link_to "サービス", static_pages_job_path
               li= link_to "メッセージ", root_path
               li.active= link_to "お問い合わせ", static_pages_contact_path
-
+    .navbar.navbar-default.navbar-static-top.navbar-fixed-top
+        .container
+          button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          .navbar-collapse.collapse.navbar-responsive-collapse
+            ul.nav.navbar-nav
+              li= link_to image_tag("psara.png", width: 40, height: 40)
+              li= link_to "会員登録", new_user_registration_path
+              li= link_to "ログイン", new_user_session_path
+              li= link_to "プサラ・インスティテュート", static_pages_home_path
+              li= link_to "ロゴマークの由来", static_pages_logo_path
+              li= link_to "サービス", static_pages_job_path
+              li= link_to "メッセージ", root_path
+              li.active= link_to "お問い合わせ", static_pages_contact_path
+    #myCarousel.carousel.slide data-ride="carousel" data-interval="2000" data-pause='hover'
+      ol.carousel-indicators
+        li.active data-target="#myCarousel" data-slide-to="0"
+        li data-target="#myCarousel" data-slide-to="1"
+        li data-target="#myCarousel" data-slide-to="2"
+      <!-- カルーセルのスライドするコンテンツ部分 -->
+        .carousel-inner
+          .item.active
+            .text-center=image_tag("image1.png", :size => "1500") 
+            .container
+              .carousel-caption
+          .item
+            .text-center=image_tag("image2.png", :size => "1500")
+            .container
+              .carousel-caption
+          .item
+            .text-center=image_tag("image3.png", :size => "1500")
+            .container
+              .carousel-caption
+        a.left.carousel-control href="#myCarousel" role="buttun" data-slide="prev"
+          span.glyphicon-chevron-left.glyphicon
+        a.right.carousel-control href="#myCarousel" role="buttun" data-slide="next"
+          span.glyphicon-chevron-right.glyphicon
     .container
       .row
         .col-lg-9
