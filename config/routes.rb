@@ -14,11 +14,13 @@ Rails.application.routes.draw do
 
   get 'static_pages/job'
 
-  root to: 'static_pages#company'
+  root to: 'static_pages#company', :template => "layouts/slide"
   
   get 'inquiry' => 'inquiry#index'              # 入力画面
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
+
+  resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
