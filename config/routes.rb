@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/job'
 
-  root to: 'static_pages#company'
+  root to: 'static_pages#company', :template => "layouts/slide"
   
   get 'inquiry' => 'inquiry#index'              # 入力画面
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
