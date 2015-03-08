@@ -24,6 +24,7 @@ html lang="en"
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
               li= link_to image_tag("psara.png", width: 40, height: 40)
+              li= link_to "投稿　", new_post_path
               li#dLabel type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 = link_to "会員登録", new_user_registration_path
                 span.caret
@@ -63,8 +64,6 @@ html lang="en"
       .row
         .col-lg-9
           = bootstrap_flash
-          .notce= notice
-          .alert= alert
           = yield
         .col-lg-3
 
