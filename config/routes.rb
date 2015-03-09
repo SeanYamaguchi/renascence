@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
   devise_for :admin_users
-  devise_for :users
+
+  devise_for :users, :controllers => {
+    :sessions      => "users/sessions",
+    :registrations => "users/registrations",
+    :passwords     => "users/passwords"
+  }
   get 'static_pages/home'
 
   get 'static_pages/company'
@@ -14,7 +19,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/job'
 
-  root to: 'static_pages#company', :template => "layouts/slide"
+  root to: 'static_pages#company', :layout => "layouts/slide"
   
   get 'inquiry' => 'inquiry#index'              # 入力画面
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面

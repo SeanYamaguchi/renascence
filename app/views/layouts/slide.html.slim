@@ -14,7 +14,7 @@ html lang="en"
     = favicon_link_tag
     = javascript_include_tag "application"
 
-  body data-spy="scroll" data-target=".navbar-example"
+  body
     .navbar.navbar-default.navbar-static-top.navbar-fixed-top
         .container
           button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
@@ -23,19 +23,19 @@ html lang="en"
             span.icon-bar
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              li= link_to "会員登録", new_user_registration_path
-              li.dropdown#dLabel type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                = link_to "ログイン", new_user_session_path
+              li= link_to "投稿　", new_post_path
+              li#dLabel type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                = link_to "会員登録", new_user_registration_path
                 span.caret
               ul.dropdown-menu role="menu" aria-labelledby="dLabel"
-                li= link_to "ログイン", new_user_session_path
                 li= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
+              li= link_to "ログイン", new_user_session_path
               li= link_to "プサラ・インスティテュート", static_pages_home_path
               li= link_to "ロゴマークの由来", static_pages_logo_path
               li= link_to "サービス", static_pages_job_path
               li= link_to "メッセージ", root_path
+              li= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
               li.active= link_to "お問い合わせ", static_pages_contact_path
-    = yield(:slideshow)
     .container
       .row
         .col-lg-9
