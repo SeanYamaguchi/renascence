@@ -1,0 +1,13 @@
+ThankYouMailer#sendmail_confirm
+
+= @user.name 様
+
+このたびはプサラインスティチュートへのご登録ありがとうございました。
+以下は、ご登録いただいたユーザ情報です。
+
+ユーザー名： = @user.name
+パスワード：　セキュリティ上の問題のため、省略させていただきます。
+メールアドレス：　= @user.email
+
+サイトをご利用いただくためには、以下のページからログインを行ってください。
+= url_for(host: '後で', controller: :users, action: :sign_in)
