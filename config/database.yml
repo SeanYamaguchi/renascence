@@ -21,10 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
-  username: sqale_92661af4fb
-  password: b903867c67fa32881736dc4af151be8e6f9686aeed513b96
-  database: sqale_92661af4fb
-  host: mysql001.sqale.jp
+  database: d3f0v04jbm5sg2
+  port: 5432
+  username: ojunhutialcfud
+  password: zeL6i6ADx9vVpZ5dODGEK2qvNG
 
