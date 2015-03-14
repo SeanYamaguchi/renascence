@@ -1,6 +1,6 @@
 class ThankYouMailer < ActionMailer::Base
   default from: "info@psara.co.jp"
-          cc: "sean@psara.co.jp"
+  default cc: "sean@psara.co.jp"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:

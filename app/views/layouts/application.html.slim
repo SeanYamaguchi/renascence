@@ -23,13 +23,13 @@ html lang="en"
             span.icon-bar
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              li= link_to "会員登録", new_user_registration_path
-              li.dropdown#dLabel type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                = link_to "ログイン", new_user_session_path
-                span.caret
-              ul.dropdown-menu role="menu" aria-labelledby="dLabel"
-                li= link_to "ログイン", new_user_session_path
-                li= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
+              /li= link_to "会員登録", new_user_registration_path
+              /li.dropdown#dLabel type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+               / = link_to "ログイン", new_user_session_path
+                /span.caret
+              /ul.dropdown-menu role="menu" aria-labelledby="dLabel"
+               / li= link_to "ログイン", new_user_session_path
+                /li= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
               li= link_to "プサラ・インスティテュート", static_pages_home_path
               li= link_to "ロゴマークの由来", static_pages_logo_path
               li= link_to "サービス", static_pages_job_path
@@ -41,6 +41,7 @@ html lang="en"
         .col-lg-9
           = bootstrap_flash
           = yield
+          iframe src='http://media.mercola.com/assets/html/mercola/citation.htm' scrolling='no' noresize='noresize' frameborder='0'
         .col-lg-3
 
       footer.navbar-fixed-bottom
