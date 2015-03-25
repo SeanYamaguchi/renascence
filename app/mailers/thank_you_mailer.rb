@@ -13,3 +13,4 @@ class ThankYouMailer < ActionMailer::Base
      # subject: 'ユーザー登録ありがとうございました。')
   #end
 end
+

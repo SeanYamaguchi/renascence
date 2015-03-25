@@ -7,6 +7,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 		#render text: "メールは正しく送信されました"
 	end
 
+  def edit
+    super
+  end
+
+  def show
+    super
+  end
+
   def create
     super
   end
