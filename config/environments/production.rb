@@ -51,7 +51,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => 'localhose:3000'}
+  config.action_mailer.default_url_options = { :host => 'psara-institute.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :address => 'smtp.sendgrid.new',
@@ -59,7 +59,7 @@ Rails.application.configure do
   :authentication => "plain",
   :user_name => 'app34862435@heroku.com',
   :password => 'kbrhc1jk',
-  :domain => 'heroku.com',
+  :domain => 'muumuu-domain.com',
   :enable_starttls_auto => true
 }
 end
