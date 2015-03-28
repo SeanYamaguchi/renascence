@@ -58,6 +58,6 @@ Rails.application.configure do
   :user_name => 'app34862435@heroku.com',
   :password => 'kbrhc1jk',
   :domain => 'psara-institute.com/',
-  :enable_starttls_auto => true
+  :enable_starttls_auto => false
 }
 end
