@@ -2,16 +2,13 @@
   h1 お問い合わせ
 p お問い合わせいただきありがとうございました。
 
-table
-  tr
-  	th 名前
-    td
-      = @inquiry.username
-  tr
-  	th
-  	td
-  	  = @inquiry.email
-  tr
-  	th
-  	td
-  	  = simple_format(@inquiry.message)
+  table
+    tr
+  	  th 御名前
+      td= @inquiry.username
+    tr　
+  	  th メールアドレス
+  	  td= @inquiry.email
+    tr
+  	  th ご相談内容
+  	  td= simple_format(@inquiry.message)
