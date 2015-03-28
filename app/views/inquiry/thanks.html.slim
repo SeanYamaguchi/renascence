@@ -4,14 +4,11 @@ p お問い合わせいただきありがとうございました。
 p 以下の内容を承りました。
 table
   tr
-    th 名前
-    td
-      = @inquiry.name
+    th 御名前
+    td= @inquiry.name
   tr
-    th
-    td
-      = @inquiry.email
+    th メールアドレス
+    td= @inquiry.email
   tr
-    th
-    td
-      = simple_format(@inquiry.message)
+    th 内容
+    td= simple_format(@inquiry.message)
