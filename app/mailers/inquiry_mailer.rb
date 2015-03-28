@@ -4,7 +4,7 @@ class InquiryMailer < ActionMailer::Base
 
   def received_email(inquiry)
     @inquiry = inquiry
-    mail(:subject => '#{@user.username} 様お問い合わせありがとうございました。')
+    mail(:subject => '#{inquiry.name} 様お問い合わせありがとうございました。')
   end
 
 end
