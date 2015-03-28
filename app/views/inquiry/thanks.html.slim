@@ -1,15 +1,3 @@
 .page-header
   h1 お問い合わせ
 p お問い合わせいただきありがとうございました。
-
-= form_tag, @inquiry do |f|
-  table.table
-    tr
-      th 名前（必須)
-      td= f.text_field :name
-    tr
-      th メールアドレス（必須)
-      td= f.text_field :email
-    tr
-      th お問い合わせ内容
-      td= f.text_area :message
