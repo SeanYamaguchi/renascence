@@ -50,6 +50,16 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
+  ActionMailer::Base.smtp_setting = {
+  :address => 'smtp.sendgrid.new',
+  :port => '587'
+  :authentication => :plain,
+  :user_name => 'app34862435@heroku.com'
+  :password => 'kbrhc1jk'
+  :domain => 'psara-institute.com/'
+  :enable_starttls_auto => true
+}
+
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
