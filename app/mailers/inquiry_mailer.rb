@@ -1,5 +1,5 @@
 class InquiryMailer < ActionMailer::Base
-  default to: "shion.yamaguchi.shion@gmail.com" 
+  default to: "info@psara.co.jp" 
   default from: "app34862435@heroku.com"
 
   def received_email(inquiry)
