@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     :registrations => "users/registrations",
     :passwords     => "users/passwords"
   }
+
+  namespace :users do 
+    get 'users/index'
+  end
   get 'static_pages/home'
 
   get 'static_pages/company'
