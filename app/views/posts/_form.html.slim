@@ -1,0 +1,47 @@
+= form_for(@post) do |f|
+-if @post.errors.any?
+  #error_explanation
+    h2= pluralize(@post.errors.count, "error") 
+    h2 prohibited this post from being saved
+    ul
+      -@post.errors.full_messages.each do |msg|
+        li= msg
+
+.post
+  dl.dl-horizontal
+    dt タイトル
+    dd= f.text_field :subject
+    dt日時
+    dd= f.date_select :date
+    <!-- 写真機能はここから -->
+    dt 写真
+    dd= f.file_field :picture
+    <!-- 写真機能はここまでに！ -->
+    dt 動画
+    dd= f.file_field :video, :accept => 'video/*'
+
+    dt 本文
+    dd= f.text_area :body
+
+  .clearfix
+    p.pull-right
+      = f.submit '投稿', :class => "btn btn-success"
+      = link_to '表示', @post, :class => "btn btn-primary"
+      = link_to '戻る', posts_path, :class => "btn btn-warning"
+
+      <!-- Button trigger modal -->
+button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"
+  Launch ビデオの追加
+
+<!-- Modal -->
+.modal.fade id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true"&times;
+        h4.modal-title id="myModalLabel" ビデオ
+        .modal-body
+          = render 'video/form'
+      .modal-footer
+        button type="button" class="btn btn-default" data-dismiss="modal" Close

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329104739) do
+ActiveRecord::Schema.define(version: 20150330185802) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(version: 20150329104739) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+
+  create_table "admin_users_mailmagazines", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pictures", force: true do |t|
+    t.string   "picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "picture_id"
+  end
 
   create_table "posts", force: true do |t|
     t.date     "date"
@@ -63,12 +77,6 @@ ActiveRecord::Schema.define(version: 20150329104739) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
-    t.string   "username"
-    t.integer  "post_address"
-    t.string   "address_prefectural"
-    t.string   "address_city"
-    t.string   "address_street"
-    t.string   "address_building"
     t.string   "magazine"
   end
 
@@ -76,5 +84,12 @@ ActiveRecord::Schema.define(version: 20150329104739) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+
+  create_table "videos", force: true do |t|
+    t.string   "video"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "video_id"
+  end
 
 end

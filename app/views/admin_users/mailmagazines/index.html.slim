@@ -1,0 +1,23 @@
+h1 Listing admin_users_mailmagazines
+
+table
+  thead
+    tr
+      th Title
+      th Body
+      th
+      th
+      th
+
+  tbody
+    - @admin_users_mailmagazines.each do |admin_users_mailmagazine|
+      tr
+        td = admin_users_mailmagazine.title
+        td = admin_users_mailmagazine.body
+        td = link_to 'Show', admin_users_mailmagazine
+        td = link_to 'Edit', edit_admin_users_mailmagazine_path(admin_users_mailmagazine)
+        td = link_to 'Destroy', admin_users_mailmagazine, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Mailmagazine', new_admin_users_mailmagazine_path

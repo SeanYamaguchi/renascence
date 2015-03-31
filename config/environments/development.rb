@@ -45,4 +45,6 @@ Rails.application.configure do
 
   #for devise mailer
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+  config.session_store :redis_store, servers: 'redis://localhost:6379/0', expire_in: 1.day
 end
