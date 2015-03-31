@@ -1,0 +1,21 @@
+h1 Listing posts_documents
+
+table
+  thead
+    tr
+      th Text
+      th
+      th
+      th
+
+  tbody
+    - @posts_documents.each do |posts_document|
+      tr
+        td = posts_document.text
+        td = link_to 'Show', posts_document
+        td = link_to 'Edit', edit_posts_document_path(posts_document)
+        td = link_to 'Destroy', posts_document, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Document', new_posts_document_path

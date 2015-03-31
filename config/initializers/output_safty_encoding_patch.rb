@@ -7,7 +7,6 @@ module ActiveSupport
         super(ERB::Util.h(value.force_encoding('utf-8')))
       end
     end
-    alias << concat
   end
 end
 

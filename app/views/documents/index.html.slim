@@ -1,0 +1,27 @@
+h1 Listing documents
+
+table
+  thead
+    tr
+      th Text
+      th Video
+      th Picture
+      th Post
+      th
+      th
+      th
+
+  tbody
+    - @documents.each do |document|
+      tr
+        td = document.text
+        td = document.video
+        td = document.picture
+        td = document.post_id
+        td = link_to 'Show', document
+        td = link_to 'Edit', edit_document_path(document)
+        td = link_to 'Destroy', document, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Document', new_document_path

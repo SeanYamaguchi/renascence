@@ -2,6 +2,20 @@ require 'resque/server'
 
 Rails.application.routes.draw do
 
+  resources :documents
+
+  namespace :posts do
+    resources :pictures
+  end
+
+  namespace :posts do
+    resources :videos
+  end
+
+  namespace :posts do
+    resources :documents
+  end
+
   resources :pictures
 
   resources :videos

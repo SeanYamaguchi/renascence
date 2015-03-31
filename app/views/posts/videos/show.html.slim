@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Video:
+  = @posts_video.video
+
+= link_to 'Edit', edit_posts_video_path(@posts_video)
+'|
+= link_to 'Back', posts_videos_path
