@@ -47,14 +47,6 @@ ActiveRecord::Schema.define(version: 20150401202715) do
     t.datetime "updated_at"
   end
 
-  create_table "pictures", force: true do |t|
-    t.string   "picture"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "picture_id"
-    t.integer  "post_id"
-  end
-
   create_table "posts", force: true do |t|
     t.date     "date"
     t.string   "subject"
@@ -63,8 +55,6 @@ ActiveRecord::Schema.define(version: 20150401202715) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "video"
-    t.integer  "video_id"
-    t.integer  "picture_id"
   end
 
   create_table "taggings", force: true do |t|
@@ -116,13 +106,5 @@ ActiveRecord::Schema.define(version: 20150401202715) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true
-
-  create_table "videos", force: true do |t|
-    t.string   "video"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "video_id"
-    t.integer  "post_id"
-  end
 
 end
