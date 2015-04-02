@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1
-  # GET /posts/1.json
+  # GET /posts/1.
   def show
     @posts = Post.find(params[:id])
     @documents = @posts.documents.all
