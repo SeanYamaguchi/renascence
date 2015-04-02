@@ -8,6 +8,16 @@ gem 'rails', '4.1.6'
 group :development do
   gem 'sqlite3'
 end
+
+group :development, :test do
+  gem 'hirb'         # モデルの出力結果を表形式で表示するGem
+  gem 'hirb-unicode' # 日本語などマルチバイト文字の出力時の出力結果のずれに対応
+
+  gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem 'pry-doc'    # methodを表示
+  gem 'pry-byebug' # デバッグを実施
+end
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -42,7 +52,7 @@ gem 'spring',        group: :development
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'validates_email_format_of'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
@@ -58,4 +68,17 @@ gem 'cloudinary'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'streamio-ffmpeg'
-gem "ransack"
+gem 'ransack', '1.3.0'
+
+gem 'redis'
+gem 'redis-rails'
+gem 'resque', :require => 'resque/server'
+gem 'resque_mail_queue'
+gem 'daemon-spawn', :require => 'daemon_spawn'
+gem 'systemu'
+gem 'aws-ses', '~> 0.5.0', :require => 'aws/ses'
+gem 'resque_mailer'
+
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'jquery-ui-rails'
+gem 'gon'

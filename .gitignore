@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore bundler gems.
+vendor/bundle
+
+# Ignore bundler gems.
+vendor/bundler

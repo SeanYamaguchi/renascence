@@ -10,7 +10,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *= require_static_pages
+ *= require jquery.tagit
+ *= require tagit.ui-zendesk
+ *= require_posts
  *= require_tree .
  *= require_self
 
  */
+
+.ui-helper-hidden-accessible {
+  display: none;
+}

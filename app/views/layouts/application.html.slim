@@ -12,7 +12,8 @@ html lang="en"
     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
     = favicon_link_tag
-    = javascript_include_tag "application"
+    = include_gon
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
 
   body data-spy="scroll" data-target=".navbar-example"
     .navbar.navbar-default.navbar-static-top.navbar-fixed-top
@@ -35,7 +36,7 @@ html lang="en"
               li= link_to "ロゴマークの由来", static_pages_logo_path
               li= link_to "サービス", static_pages_job_path
               li= link_to "メッセージ", root_path
-              li.active= link_to "お問い合わせ", static_pages_contact_path
+              li.active= link_to "お問い合わせ", inquiry_path
     = yield(:slideshow)
     .container
       .row
