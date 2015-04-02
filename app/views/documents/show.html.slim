@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Text:
+  = @document.text
+p
+  strong Video:
+  = @document.video
+p
+  strong Picture:
+  = @document.picture
+p
+  strong Post:
+  = @document.post_id
+
+= link_to 'Edit', edit_document_path(@document)
+'|
+= link_to 'Back', post_path(@document.post_id)

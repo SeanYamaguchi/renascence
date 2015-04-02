@@ -44,5 +44,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   #for devise mailer
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+ # config.action_mailer.default_url_options = { host: 'localhost:3000' }
+ # config.session_store :redis_store, servers: 'redis://localhost:127.0.0.1', expire_in: 1.day
 end

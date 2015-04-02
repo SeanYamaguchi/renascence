@@ -1,4 +1,24 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
+
+  resources :documents
+
+  namespace :posts do
+    resources :pictures
+  end
+
+  namespace :posts do
+    resources :videos
+  end
+
+  namespace :posts do
+    resources :documents
+  end
+
+  namespace :admin_users do
+    resources :mailmagazines
+  end
 
   devise_for :admin_users
 
@@ -10,6 +30,7 @@ Rails.application.routes.draw do
 
   namespace :users do 
     get 'users/index'
+    get 'users/:name', :to => 'users#show'
   end
   get 'static_pages/home'
 
@@ -31,6 +52,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  mount Resque::Server.new, at: "/resque"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

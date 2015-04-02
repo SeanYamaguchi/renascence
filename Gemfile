@@ -68,4 +68,17 @@ gem 'cloudinary'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'streamio-ffmpeg'
-gem "ransack"
+gem 'ransack', '1.3.0'
+
+gem 'redis'
+gem 'redis-rails'
+gem 'resque', :require => 'resque/server'
+gem 'resque_mail_queue'
+gem 'daemon-spawn', :require => 'daemon_spawn'
+gem 'systemu'
+gem 'aws-ses', '~> 0.5.0', :require => 'aws/ses'
+gem 'resque_mailer'
+
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'jquery-ui-rails'
+gem 'gon'
