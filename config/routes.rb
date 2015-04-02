@@ -16,10 +16,6 @@ Rails.application.routes.draw do
     resources :documents
   end
 
-  resources :pictures
-
-  resources :videos
-
   namespace :admin_users do
     resources :mailmagazines
   end
