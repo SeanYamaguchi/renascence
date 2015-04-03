@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:show, :index]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+ # before_action :authenticate_admin_user!, except: [:show, :index]
+  before_action :set_post, only: [:edit, :update, :destroy]
   before_action  :set_post_tags_to_gon, only: [:edit]
 
   # GET /posts
@@ -11,12 +11,10 @@ class PostsController < ApplicationController
     @posts = @q.result(distinct: true).includes(:tags)
   end
 
-  # GET /posts/1
-  # GET /posts/1.
   def show
-    @posts = Post.find(params[:id])
-    @documents = @posts.documents.all
-    @document = @posts.documents.build
+    @post = Post.find(params[:id])
+    @documents = @post.documents.all
+    @document = @post.documents.build
   end
 
   # GET /posts/new

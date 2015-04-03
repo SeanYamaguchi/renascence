@@ -1,0 +1,9 @@
+.post.well
+  h1 Editing post
+  .row
+    .col-lg-6
+      .input-group.well= render 'form'
+    .col-lg-6
+      .input-group.well.btn.btn-primary= link_to 'Show', @post
+    .col-lg-6
+      .input-group.well.btn.btn-sucsess= link_to 'Back', posts_path
