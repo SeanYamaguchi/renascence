@@ -82,3 +82,6 @@ gem 'resque_mailer'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'jquery-ui-rails'
 gem 'gon'
+# SEO
+gem 'meta-tags'
+gem 'sitemap_generator'
