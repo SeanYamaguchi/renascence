@@ -29,5 +29,5 @@ p#notice= notice
             .input-group= link_to 'Edit', edit_post_path(@post), :class => "btn  btn-primary"
     - if admin_user_signed_in?
       .col-md-6
-        = render 'documents/form'
+      = render 'documents/form'
     .col-lg-6.input-group= link_to 'Back', posts_path, :class => "btn btn-success"
