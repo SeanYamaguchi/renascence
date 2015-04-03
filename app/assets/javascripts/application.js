@@ -17,3 +17,15 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll <= 100) {
+    	$(".header").removeClass("scrolingHeader");
+    	$(".header").addClass("topHeader");
+    } else {
+    	$(".header").removeClass("topHeader");
+        $(".header").addClass("scrolingHeader");
+    }
+});

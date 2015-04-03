@@ -44,6 +44,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/job'
 
+  get 'static_pages/sitemap'
+
   root to: 'static_pages#company', :layout => "layouts/slide"
   
   get 'inquiry' => 'inquiry#index'              # 入力画面

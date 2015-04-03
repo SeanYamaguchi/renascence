@@ -1,19 +1,24 @@
-= form_for @document do |f|
+.well= form_for @document do |f|
   - if @document.errors.any?
     #error_explanation
       h2 = "#{pluralize(@document.errors.count, "error")} prohibited this document from being saved:"
       ul
         - @document.errors.full_messages.each do |message|
           li = message
-
-  .field
-    = f.label :text
-    = f.text_area :text
-  .field
-    = f.label :video
-    = f.file_field :video, :accept => 'video/*'
-  .field
-    = f.label :picture
-    = f.file_field :picture
-  .hidden_field :post_id
-  .actions = f.submit
+  .row
+    .col-lg-6
+      .input-group
+        = f.label :text
+        br
+        .text_area= f.text_area :text, class: "btn-primary btn"
+        br
+      .input-group
+        = f.label :video
+        = f.file_field :video, :accept => 'video/*'
+        br
+      .input-group
+        = f.label :picture
+        = f.file_field :picture
+        br
+      .input-group= f.hidden_field :post_id
+      .input-group= f.submit class: "btn btn-primary"

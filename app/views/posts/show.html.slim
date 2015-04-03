@@ -3,26 +3,31 @@ p#notice= notice
   .row.well
     .col-md-6.well
       h4.input-group= @post.subject
-        small.pull-right= @post.date
-    .col-md-6.well
-      .input-group= image_tag(@post.picture_url) if @post.picture.present?
-  
-    .col-md-6.well
-      .input-group= image_tag(@post.video_url(:screenshot).to_s, id: "video")
-    -if @documents
-      - @documents.each do |document|
-        .col-md-6.well
-          .input-group= document.text
-        .col-md-6.well
-          .input-group
-            p.img-responsive alt="Responsive image"= document.picture
-        .col-md-6.well
-          .input-group
-            p.img-responsive alt="Responsive image"= document.video
-    - if admin_user_signed_in? 
+      h5.input-group= @post.date
+    - if @post.picture.present?
       .col-md-6.well
-        .input-group= link_to 'Delete', document_path(document), method: :delete, data: { confirm: '削除してもよろしいですか？' }
-        .input-group= link_to 'Edit', edit_post_path(@post), :class => "btn btn-primary"
-        .input-group= render 'documents/form'
-    .col-lg-6.input-group
-      = link_to 'Back', posts_path, :class => "btn btn-success"
+        .input-group= image_tag(@post.picture_url) if @post.picture.present?
+    - if @post.video.present?  
+      .col-md-6.well
+        .input-group= image_tag(@post.video_url(:screenshot).to_s, id: "video")
+    - if @documents.present?
+      - @documents.each do |document|
+        - if document.text.present?
+          .col-md-6.well
+            .input-group= document.text
+        - if document.picture.present?
+          .col-md-6.well
+            .input-group
+              p.img-responsive= image_tag(document.picture_url)
+        - if document.video.present?
+          .col-md-6.well
+            .input-group
+              p.img-responsive= image_tag(document.video_url(:screenshot).to_s, id: "video")
+        - if admin_user_signed_in?
+          .col-md-6.well
+            .input-group= link_to 'Delete', document_path(document), method: :delete, data: { confirm: '削除してもよろしいですか？' }, :class => "btn  btn-primary"
+            .input-group= link_to 'Edit', edit_post_path(@post), :class => "btn  btn-primary"
+    - if admin_user_signed_in?
+      .col-md-6
+      = render 'documents/form'
+    .col-lg-6.input-group= link_to 'Back', posts_path, :class => "btn btn-success"
