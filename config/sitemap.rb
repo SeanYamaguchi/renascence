@@ -9,7 +9,10 @@ SitemapGenerator::Sitemap.create do
   add 'static_pages/message'
   add 'inquiry'
 
-  
+  Post.find_each do |post|
+    add post_path(product), :lastmod => product.updated_at
+  end
+
   # The root path '/' and sitemap index file are added automatically for you.
   # Links are added to the Sitemap in the order they are specified.
   #
