@@ -8,15 +8,18 @@
       ul
         -@inquiry.errors.each do |attr, msg|
           li= msg
-
-  table.table
-    tr
-      th 御名前（必須)
-      td= f.text_field :name
-    tr
-      th メールアドレス（必須)
-      td= f.text_field :email
-    tr
-      th お問い合わせ内容
-      td= f.text_area :message
-  = f.submit '確認', class: 'btn btn-primary'
+  itemscope itemtype="http://schema.org/Product"
+    table.table
+      tr
+        span itemprop="name"
+          th 御名前（必須)
+          td= f.text_field :name
+      tr
+        span itemprop="email"
+          th メールアドレス（必須)
+          td= f.text_field :email
+      tr
+        span itemprop="about"
+          th お問い合わせ内容
+          td= f.text_area :message
+    = f.submit '確認', class: 'btn btn-primary'

@@ -33,10 +33,10 @@ html lang="en"
                 /li= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
               li= link_to image_tag("psara.png", width: 25, height: 20)
               li= link_to "プサラ・インスティテュート", static_pages_home_path
-              li= link_to "PsaraMedicalNews", posts_path
+              li.active= link_to "PsaraMedicalNews", posts_path
               li= link_to "ロゴマークの由来", static_pages_logo_path
               li= link_to "サービス", static_pages_job_path
-              li= link_to "メッセージ", root_path
+              li.active= link_to "メッセージ", root_path
               li.active= link_to "お問い合わせ", inquiry_path
     = yield(:slideshow)
     .container
