@@ -46,7 +46,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/sitemap'
 
-  get 'static_pages/google-web-master' => 'static_pages#google2fce42d86d6074a7'
+  get 'static_pages/google-web-master' => 'static_pages#google2fce42d86d6074a7.html'
 
   root to: 'static_pages#company', :layout => "layouts/slide"
   
@@ -55,6 +55,8 @@ Rails.application.routes.draw do
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 
   resources :posts
+
+  get 'google' => 'static_pages#google'
 
   mount Resque::Server.new, at: "/resque"
   # The priority is based upon order of creation: first created -> highest priority.

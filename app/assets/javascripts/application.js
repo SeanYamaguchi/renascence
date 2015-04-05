@@ -29,3 +29,4 @@ $(document).scroll(function() {
         $(".header").addClass("scrolingHeader");
     }
 });
+

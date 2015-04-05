@@ -1,3 +1,12 @@
+javascript:
+  $(document).ready() 'ready page:load', ->
+  $('#post-tags').tagit
+    fieldName:   'post[:tag_list]'
+    singleField: true
+    availableTags: gon.available_tags
+    if gon.post_tags?
+      for tag in gon.post_tags
+        $('#post-tags').tagit 'createTag', tag
 -if @post.errors.any?
 #error_explanation
   h2= pluralize(@post.errors.count, "error")
@@ -6,7 +15,7 @@
     - @post.errors.full_messages.each do |msg|
       li= msg
 = form_for(@post) do |f|
-  .post
+  .post.form-group
     dl.dl-horizontal
       dt タイトル
       dd= f.text_field :subject
@@ -18,7 +27,8 @@
       dd= f.file_field :video, :accept => 'video/*'
       dt 本文 
       dd= f.text_area :body
-      dd %ul#post-tags
+      dt= f.label :genres_list, "ジャンル"
+      dd= text_field_tag 'post[genres_list]', @post.genres_list.split(',')
 
   .clearfix
     p.pull-right

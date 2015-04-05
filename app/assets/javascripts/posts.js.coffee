@@ -1,5 +1,5 @@
 $(document).ready() 'ready page:load', ->
-$('.admin-posts #post-tags').tagit
+$('#post-tags').tagit
   fieldName:   'post[tag_list]'
   singleField: true
   availableTags: gon.available_tags
