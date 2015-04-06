@@ -15,7 +15,7 @@
  *= require_posts
  *= require_tree .
  *= require_self
-
+ *= require_scaffold
  */
 
 .ui-helper-hidden-accessible {
