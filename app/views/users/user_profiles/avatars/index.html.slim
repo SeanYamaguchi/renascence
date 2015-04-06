@@ -1,0 +1,24 @@
+h1 Listing users_user_profiles_avatars
+
+table
+  thead
+    tr
+      th Avatar
+      th
+      th
+      th
+
+  tbody
+    - @users_user_profiles_avatars.each do |users_user_profiles_avatar|
+      tr
+        - if users_user_profiles_avatar.present?
+          td= image_tag(users_user_profiles_avatar.avatar_url(:thumbnail), :width => 80, :height => 80)
+        - else
+          = image_tag("no-avatar.png", :width => 80, :height => 80)
+        td = link_to 'Show', users_user_profiles_avatar
+        td = link_to 'Edit', edit_users_user_profiles_avatar_path(users_user_profiles_avatar)
+        td = link_to 'Destroy', users_user_profiles_avatar, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Avatar', new_users_user_profiles_avatar_path

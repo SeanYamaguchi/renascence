@@ -1,0 +1,21 @@
+= form_for @users_user_profiles_avatar do |f|
+  - if @users_user_profiles_avatar.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@users_user_profiles_avatar.errors.count, "error")} prohibited this users_user_profiles_avatar from being saved:"
+      ul
+        - @users_user_profiles_avatar.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    - if @users_user_profiles_avatar.present?
+      = image_tag(@users_user_profiles_avatar.avatar_url(:thumbnail), :width => 80, :height => 80)
+    - else
+      = image_tag("no-avatar.png", :width => 80, :height => 80)
+    = f.label :avatar
+    = f.file_field :avatar
+  .field
+    = f.label :remove_avatar
+    = f.check_box :remove_avatar
+    = f.hidden_field :avatar_cache
+    = f.hidden_field :user_id
+  .actions = f.submit

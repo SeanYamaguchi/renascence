@@ -2,6 +2,12 @@ require 'resque/server'
 
 Rails.application.routes.draw do
 
+  namespace :users do
+    namespace :user_profiles do
+      resources :avatars
+    end
+  end
+
   resources :documents
 
   namespace :posts do
