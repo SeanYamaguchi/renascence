@@ -1,0 +1,9 @@
+.post.well
+  h1 New blog
+  .row
+    .col-lg-6
+      .input-group.well= render 'form'
+    .col-lg-6
+      .input-group.well.btn.btn-primary= link_to 'Show', @blog
+    .col-lg-6
+      .input-group.well.btn.btn-sucsess= link_to 'Back', blogs_path

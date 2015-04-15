@@ -2,6 +2,8 @@ require 'resque/server'
 
 Rails.application.routes.draw do
 
+  resources :blogs
+
   namespace :users do
     namespace :user_profiles do
       resources :avatars
