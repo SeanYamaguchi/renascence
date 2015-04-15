@@ -1,0 +1,28 @@
+-if @blog.errors.any?
+#error_explanation
+  h2= pluralize(@blog.errors.count, "error")
+    prohibited this post from being saved:</h2>
+  ul
+    - @blog.errors.full_messages.each do |msg|
+      li= msg
+= form_for(@blog) do |f|
+  .post.form-group
+    dl.dl-horizontal
+      dt タイトル
+      dd= f.text_field :subject
+      dt 日時
+      dd= f.date_select :date
+      dt 写真
+      dd= f.file_field :picture
+      dt 動画
+      dd= f.file_field :video, :accept => 'video/*'
+      dt 本文 
+      textarea.form-control = f.text_area :body
+      /dt= f.label :genres_list, "ジャンル"
+      /dd= text_field_tag 'post[genres_list]', @post.genres_list.split(',')
+
+  .clearfix
+    p.pull-right
+      = f.submit '投稿', :class => "btn btn-success"
+      = link_to '表示', @blog, :class => "btn btn-primary"
+      = link_to '戻る', blogs_path, :class => "btn btn-warning"

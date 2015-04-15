@@ -1,0 +1,47 @@
+- if admin_user_signed_in?
+  = link_to '投稿する', new_blog_path, :class => "btn btn-danger"
+
+.container.well
+  = search_form_for @q do |f|
+
+    .row
+      .col-lg-6
+        .input-group
+          span.input-group-btn
+            button.btn.btn-default type="button" タイトル
+          = f.search_field :body, class: "form-control", placeholder: "Search for ..."
+      .col-lg-6
+        .input-group
+          span.input-group-btn
+            button.btn.btn-default type="button" 記事内容
+          = f.search_field :body, class: "form-control", placeholder: "Search for..."
+      .col-lg-6
+        .input-group.input-group-btn type="button"
+          = f.submit class: "form-control btn-primary btn", placeholder: "検索"
+
+h4.h4-titleglyphicon.glyphicon-pencil Blog of Psara
+- @blogs.each do |blog|
+  .container.well
+    .row
+      .col-lg-6
+        .input-group
+          span.input-group-btn
+            h5.well.boy
+              = blog.subject
+              small.pull-right= blog.date
+            - if blog.picture.present?
+              .img-responsive.well alt="Responsive image"
+                = link_to image_tag(blog.picture_url), blog
+            - if blog.video.present?
+              .img-responsive.well alt="Responsive image"
+                = link_to image_tag(blog.video_url(:screenshot)), blog
+            p.post_text.well
+              strong.wel Summary
+              = blog.body
+      .col-lg-6
+        .input-group
+          p.pull-right
+            = link_to '詳細', blog , :class => "btn btn-primary"
+            - if admin_user_signed_in?
+              = link_to '編集', edit_blog_path(blog) , :class => "btn btn-success"
+              = link_to '削除', blog, method: :delete, data: { confirm: '本当に削除しますか？' } , :class => "btn btn-warning"
