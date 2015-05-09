@@ -35,21 +35,20 @@ html lang="en"
             span.icon-bar
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              /li= link_to "会員登録", new_user_registration_path
-              /li.dropdown#dLabel type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              li.head-link-1= link_to image_tag("psara.png", width: 25, height: 20, alt: "Brand")
+              li.head-link-2= link_to "会員登録", new_user_registration_path
+              li.dropdown#dLabel type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                / = link_to "ログイン", new_user_session_path
                 /span.caret
               /ul.dropdown-menu role="menu" aria-labelledby="dLabel"
-               / li= link_to "ログイン", new_user_session_path
+              li.head-link-6= link_to "ログイン", new_user_session_path
                 /li= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
-              li= link_to image_tag("psara.png", width: 25, height: 20)
-              li= link_to "プサラ・インスティテュート", static_pages_home_path
-              li.active= link_to "PsaraMedicalNews", posts_path
-              li.active= link_to "BlogOfPsara", blogs_path
-              li= link_to "ロゴマークの由来", static_pages_logo_path
-              li= link_to "サービス", static_pages_job_path
-              li.active= link_to "メッセージ", root_path
-              li.active= link_to "お問い合わせ", inquiry_path
+              li.head-link-1= link_to "Renascence", root_path
+              li.head-link-2= link_to "News", posts_path
+              li.head-link-3= link_to "運営日記", blogs_path
+              li.head-link-4= link_to "Vision", static_pages_logo_path
+              li.head-link-5= link_to "Activity", static_pages_job_path
+              li.head-link-6= link_to "お問い合わせ", inquiry_path
     = yield(:slideshow)
     .container
       .row

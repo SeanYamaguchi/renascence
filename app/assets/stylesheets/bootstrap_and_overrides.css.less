@@ -28,14 +28,58 @@
 // Example:
 // @link-color: #ff0000;
 
-@theme-color: #1073b9;
-@theme-color-serious: #053164;
-@color: #fff;
+@theme-color: #330033;
+@theme-color-light: #550055;
+@theme-color-serious: #440022;
+@theme-red: #c00;
+@theme-green: #0b0;
+@theme-blue: #00a;
+@theme-yellow: #ee0;
+@theme-swan: #0cc;
+@w: #fff;
+
+@purple-gradation-1: #303;
+@purple-gradation-2: #404;
+@purple-gradation-3: #505;
+@purple-gradation-4: #606;
+@purple-gradation-5: #707;
+@purple-gradation-6: #808;
+
 @padding: 15px 30px 15px 15px;
 @border-radius: 5px;
 @border-radius-topic: 3px;
 @back: #eee;
 
+.sc-purple {
+	background-color: @theme-color-light;
+}
+
+.sc-red {
+	background-color: @theme-red;
+}
+
+.sc-blue {
+	background-color: @theme-blue;
+}
+
+.sc-green {
+	background-color: @theme-green;
+}
+
+.sc-yellow {
+	background-color: @theme-yellow;
+}
+
+.sc-swan {
+	background-color: @theme-swan;
+}
+
+.head-gradation-1 { background-color: @purple-gradation-1;}
+.head-gradation-2 { background-color: @purple-gradation-2;}
+.head-gradation-3 { background-color: @purple-gradation-3;}
+.head-gradation-4 { background-color: @purple-gradation-4;}
+.head-gradation-5 { background-color: @purple-gradation-5;}
+.head-gradation-6 { background-color: @purple-gradation-6;}
 
 .topic {
 	border-radius: @border-radius-topic;
@@ -57,6 +101,18 @@
 	border-color:@theme-color !important;
 }
 
+.header {
+
+	a {
+	color: @w !important;
+	}
+}
+
+a:hover {
+  color: @theme-color-serious !important;
+  background-color: #fff !important;
+}
+
 body {
 	margin-top: 100px !important;
 	margin-bottom: 100px;
@@ -70,7 +126,7 @@ body {
 }
 
 .container {
-	background-color: @color;
+	background-color: @w;
 }
 
 .btn-primary {
@@ -79,7 +135,7 @@ body {
 
 .dropdown-toggle {
 	color: @theme-color;
-	background-color: @color;
+	background-color: @w;
 }
 footer {
 	background-color: @theme-color;
