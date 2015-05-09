@@ -29,7 +29,6 @@ h4.h4-title.glyphicon.glyphicon-globe Psara Medical News
             h5.well.boy
               = post.subject
               small.pull-right= post.date
-            .well= render 'posts/genres_list', tag_list: post.genres_list
             - if post.picture.present?
               .img-responsive.well alt="Responsive image"
                 = link_to image_tag(post.picture_url), post

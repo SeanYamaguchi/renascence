@@ -21,3 +21,7 @@
 .ui-helper-hidden-accessible {
   display: none;
 }
+
+body {
+	background-image : url("background.jpg");
+}
