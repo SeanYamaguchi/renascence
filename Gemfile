@@ -66,7 +66,6 @@ gem 'omniauth-twitter'
 gem 'cloudinary'
   # For uploderruby
 gem 'carrierwave'
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'streamio-ffmpeg'
 gem 'ransack', '1.3.0'
 
