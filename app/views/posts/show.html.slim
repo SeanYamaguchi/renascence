@@ -5,11 +5,13 @@ p#notice= notice
       h4.input-group= @post.subject
       h5.input-group= @post.date
     - if @post.picture.present?
-      .col-md-6.well
-        .input-group= image_tag(@post.picture_url) if @post.picture.present?
+      .responsive.col-md-6.well
+        .responsive.input-group= link_to @post.picture_url.to_s
+          = image_tag(@post.picture_url, width: 250, height: 250) 
     - if @post.video.present?  
-      .col-md-6.well
-        .input-group= link_to @post.video_url.to_s { image_tag(@post.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") }
+      .responsive.col-md-6.well
+        .responsive.input-group= link_to @post.video_url.to_s 
+          = image_tag(@post.video_url(:screenshot).to_s, :alt => "ニュース#{@post.id}番", width: 250, height: 250)
     - if @documents.present?
       - @documents.each do |document|
         - if document.text.present?
