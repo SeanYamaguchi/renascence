@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: :show
   before_action :authenticate_admin_user!, except: [:show, :index]
   before_action :set_post, only: [:edit, :update, :destroy]
   before_action  :set_post_tags_to_gon, only: [:edit]
