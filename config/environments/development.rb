@@ -23,7 +23,7 @@ Rails.application.configure do
   #  password: 'secret',
   #  domain: 'examples.com'
   #}
-
+  config.action_mailer.default_url_options = { :host => 'localhost' }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

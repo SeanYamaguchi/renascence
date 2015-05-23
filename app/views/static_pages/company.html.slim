@@ -1,31 +1,18 @@
 = content_for(:slideshow)  do
     myCarousel.carousel.slide data-ride="carousel" data-interval="10000" data-pause='hover'
-      ol.carousel-indicators
-        li.active data-target="#myCarousel" data-slide-to="0"
-        li data-target="#myCarousel" data-slide-to="1"
-        li data-target="#myCarousel" data-slide-to="2"
       <!-- カルーセルのスライドするコンテンツ部分 -->
         .carousel-inner
           .item.active
             .text-center=image_tag("image1.png")
-            .container
-              .carousel-caption
-                =render :partial => "message2"
 
           .item
             .text-center=image_tag("image2.png")
-            .container
-              .carousel-caption
-                =render :partial => "message2"
+
           .item
             .text-center=image_tag("image3.png")
-            .container
-              .carousel-caption
-                =render :partial => "message2"
-        a.left.carousel-control href="#myCarousel" role="buttun" data-slide="prev"
-          span.glyphicon-chevron-left.glyphicon
-        a.right.carousel-control href="#myCarousel" role="buttun" data-slide="next"
-          span.glyphicon-chevron-right.glyphicon
+          // .item
+            // .text-center=image_tag("image4.png")
+
 ul class="nav nav-tabs top-page-slide-show"
   li role="presentation" class="dropdown"
     a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample"
