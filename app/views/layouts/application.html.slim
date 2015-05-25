@@ -72,11 +72,11 @@ html lang="en"
                   li role="presentation"= link_to "Diary", new_user_registration_path, role: "menuitem", tabindex: "-1"
                   li role="presentation"= link_to "Activity", new_user_session_path, role: "menuitem", tabindex: "-1"
                   li role="presentation"= link_to "News", user_omniauth_authorize_path(:twitter)
-    = yield(:slideshow)
     .container
       .row
         .col-lg-9
           = bootstrap_flash
+          = yield(:slideshow)
           - set_meta_tags :title => 'PsaraInstitute'
           - set_meta_tags :description => ''
           - set_meta_tags :keywords => ''
