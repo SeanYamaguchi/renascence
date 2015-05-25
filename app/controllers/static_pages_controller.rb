@@ -14,4 +14,7 @@ class StaticPagesController < ApplicationController
   def google
   	render :layout => false
   end
+
+  def index
+  end
 end

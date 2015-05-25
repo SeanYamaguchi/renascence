@@ -59,16 +59,25 @@ gem 'validates_email_format_of'
 gem 'slim-rails'
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => "bootstrap3"
-# For devise
+
+# Sessions for Users
 gem 'devise'
+gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'settingslogic'
+gem 'twitter' 
+
 # Cloudinary
 gem 'cloudinary'
-  # For uploderruby
+
+# For uploderruby
 gem 'carrierwave'
 gem 'streamio-ffmpeg'
+
+# For search
 gem 'ransack', '1.3.0'
 
+# For 
 gem 'redis'
 gem 'redis-rails'
 gem 'resque', :require => 'resque/server'

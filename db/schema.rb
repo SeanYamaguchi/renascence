@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415080253) do
+ActiveRecord::Schema.define(version: 20150525113858) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -66,21 +66,6 @@ ActiveRecord::Schema.define(version: 20150415080253) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "blog_id"
-  end
-
-  create_table "mail_documents", force: true do |t|
-    t.text     "text"
-    t.string   "video"
-    t.string   "picture"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "mail_magazine_id"
-  end
-
-  create_table "mail_magazines", force: true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "posts", force: true do |t|
@@ -139,6 +124,8 @@ ActiveRecord::Schema.define(version: 20150415080253) do
     t.string   "avatar"
     t.boolean  "remove_avatar"
     t.string   "avatae_cache"
+    t.string   "screen_name"
+    t.string   "name"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

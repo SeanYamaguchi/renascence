@@ -33,7 +33,7 @@ Rails.application.configure do
   config.assets.digest = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
-
+  config.secret_key = 'abf1e49effbfa647465e47358a296118e439ae4f01e3ed0247e1faf5d946cc0bfc157219192737335b070b9c028eb9346e8f331c4532d0f3c7aaf610a48ca7fe'
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
