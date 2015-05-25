@@ -42,8 +42,8 @@ html lang="en"
               li.head-link-4= link_to "Vision", static_pages_logo_path
               li.head-link-5= link_to "Activity", static_pages_job_path
               li.head-link-6= link_to "お問い合わせ", inquiry_path
-              - if user_signed_in?
-                li.head_link-6= link_to "ログアウト", destroy_user_session_path
+              - if current_user
+                li.head_link-6= link_to "ログアウト", logout_path
               - else
                 li.dropdown
                   #dropdownMenu1 data-toggle="dropdown" aria-expanded="true"
@@ -53,7 +53,7 @@ html lang="en"
                   ul.dropdown-menu role="menu" aria-labelledby="dropdownMenu1"
                     li role="presentation"= link_to "会員登録", new_user_registration_path, role: "menuitem", tabindex: "-1"
                     li role="presentation"= link_to "ログイン", new_user_session_path, role: "menuitem", tabindex: "-1"
-                    li role="presentation"= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
+                    li role="presentation"= link_to "with Twitter", user_omniauth_authorize_path(:twitter)
               li.dropdown
                 #dropdownMenu1 data-toggle="dropdown" aria-expanded="true"
                   .text-white
