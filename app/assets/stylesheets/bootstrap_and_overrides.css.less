@@ -29,7 +29,7 @@
 // @link-color: #ff0000;
 
 @theme-color: #330033;
-@theme-color-alpha: rgba(47, 0, 47, 0.2);
+@theme-color-alpha: rgba(47, 0, 47, 0.4);
 @theme-color-light: #550055;
 @theme-color-serious: #440022;
 @theme-red: #c00;
@@ -38,6 +38,7 @@
 @theme-yellow: #ee0;
 @theme-swan: #0cc;
 @w: #fff;
+@b: #000;
 
 @purple-gradation-1: #303;
 @purple-gradation-2: #404;
@@ -52,27 +53,27 @@
 @back: #eee;
 
 .sc-purple {
-	background-color: @theme-color-light;
+	background-color: none;
 }
 
 .sc-red {
-	background-color: @theme-red;
+	background-color: none;
 }
 
 .sc-blue {
-	background-color: @theme-blue;
+	background-color: none;
 }
 
 .sc-green {
-	background-color: @theme-green;
+	background-color: none;
 }
 
 .sc-yellow {
-	background-color: @theme-yellow;
+	background-color: none;
 }
 
 .sc-swan {
-	background-color: @theme-swan;
+	background-color: none;
 }
 
 .head-gradation-1 { background-color: @purple-gradation-1;}
@@ -81,6 +82,34 @@
 .head-gradation-4 { background-color: @purple-gradation-4;}
 .head-gradation-5 { background-color: @purple-gradation-5;}
 .head-gradation-6 { background-color: @purple-gradation-6;}
+
+
+// DropDown について
+.dropdown {
+	background-color: none;
+}
+button {
+	background-color: none;
+}
+.btn {
+	background-color: none;
+}
+#dropdownMenu1 {
+	background-color: none;
+	padding: 10px;
+}
+.dropdown-menu {
+	background-color: none;
+}
+
+// テキストの色を直接変更
+.text-white {
+	color: @w !important;
+}
+
+.text-theme {
+	color: @theme-color !important;
+}
 
 .topic {
 	border-radius: @border-radius-topic;
@@ -107,6 +136,12 @@
 	a {
 	color: @w !important;
 	}
+	background-color: @theme-color-alpha;
+}
+
+.btn {
+	height: 100%;
+	bottom:0;
 }
 
 a:hover {
@@ -114,11 +149,21 @@ a:hover {
   background-color: #fff !important;
 }
 
+
 .input-group-button:hover {
   color: @theme-color-serious !important;
   background-color: #fff !important;
 }
 
+.dropdown {
+	buttun {
+		background-color: @theme-color-alpha;
+	}
+}
+
+.dropdown-menu {
+	background-color: @theme-color-alpha;
+}
 body {
 	margin-top: 100px !important;
 	margin-bottom: 100px;
