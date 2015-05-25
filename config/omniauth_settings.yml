@@ -1,13 +1,16 @@
-defaults: &defaults
+defaults_twitter: &defaults_twitter
+  twitter_api_key: P2ALMQ7SKZlLpgYOBwamJxqcR
+  twitter_api_secret: NEzp2CiToQkFZR7wk00jRt9h5KS2a7KxwofIYu1mI5J1y1YYlq
 
 development:
-  <<: *defaults
-  twitter:
-    consumer_key: P2ALMQ7SKZlLpgYOBwamJxqcR
-    consumer_secret: NEzp2CiToQkFZR7wk00jRt9h5KS2a7KxwofIYu1mI5J1y1YYlq
+  <<: *defaults_twitter
+  secret_key_base: 7c447a65e07e598d79663b676d9f0d175c1b1198e7bbb37da3fd768357bcff6372653c565355180f991d18ca7a02500c429706929b021d7761301565cf5532b9
 
 test:
-  <<: *defaults
+  <<: *defaults_twitter
+  secret_key_base: d09b7d2a5a89e806a3bb7555b5c7c9110fa6996586d216986d4441d2ff3137a1d0f69eb0a26d6c4ae90e33a46138c0b5506f5776db74ba93a79536733c95800b
 
 production:
-  <<: *defaults
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  twitter_api_key: <%= ENV["TWITTER_CONSUMER_KEY"] %>
+  twitter_api_secret: <%= ENV["TWITTER_CONSUMER_SECRET"] %>
