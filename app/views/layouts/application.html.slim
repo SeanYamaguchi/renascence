@@ -75,7 +75,7 @@ html lang="en"
     .container
       .row
         .col-lg-9
-          = bootstrap_flash
+          .flash= bootstrap_flash
           = yield(:slideshow)
           - set_meta_tags :title => 'PsaraInstitute'
           - set_meta_tags :description => ''
