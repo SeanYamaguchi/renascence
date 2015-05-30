@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @community.name
+p
+  strong Logo:
+  = @community.logo
+p
+  strong Email:
+  = @community.email
+p
+  strong Purpose:
+  = @community.purpose
+p
+  strong Activity:
+  = @community.activity
+p
+  strong Locked:
+  = @community.locked
+p
+  strong End date:
+  = @community.end_date
+p
+  strong Leader:
+  = @community.leader
+== render 'child_form'
+= link_to 'Edit', edit_community_path(@community)
+'|
+= link_to 'Back', communities_path

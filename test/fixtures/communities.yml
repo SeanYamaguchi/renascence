@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  logo: MyString
+  email: MyString
+  purpose: MyText
+  activity: MyText
+  locked: false
+  end_date: 2015-05-29
+  leader: MyString
+
+two:
+  name: MyString
+  logo: MyString
+  email: MyString
+  purpose: MyText
+  activity: MyText
+  locked: false
+  end_date: 2015-05-29
+  leader: MyString

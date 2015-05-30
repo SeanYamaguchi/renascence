@@ -93,3 +93,6 @@ gem 'gon'
 # SEO
 gem 'meta-tags'
 gem 'sitemap_generator'
+
+# For tree construction of communities
+gem 'ancestry'

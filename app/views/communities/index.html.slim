@@ -1,0 +1,35 @@
+h1 Listing communities
+
+table
+  thead
+    tr
+      th Name
+      th Logo
+      th Email
+      th Purpose
+      th Activity
+      th Locked
+      th End date
+      th Leader
+      th
+      th
+      th
+
+  tbody
+    - @communities.each do |community|
+      tr
+        td = community.name
+        td = community.logo
+        td = community.email
+        td = community.purpose
+        td = community.activity
+        td = community.locked
+        td = community.end_date
+        td = community.leader
+        td = link_to 'Show', community
+        td = link_to 'Edit', edit_community_path(community)
+        td = link_to 'Destroy', community, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Community', new_community_path
