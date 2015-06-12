@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529111212) do
+ActiveRecord::Schema.define(version: 20150612075239) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -59,18 +59,30 @@ ActiveRecord::Schema.define(version: 20150529111212) do
   end
 
   create_table "communities", force: true do |t|
-    t.string   "name"
-    t.string   "logo"
-    t.string   "email"
-    t.text     "purpose"
-    t.text     "activity"
+    t.string   "name",                                                     null: false
+    t.string   "logo",           default: "app/assets/images/no-logo.png"
+    t.string   "email",                                                    null: false
+    t.text     "purpose",                                                  null: false
+    t.text     "activity",                                                 null: false
     t.boolean  "locked"
-    t.date     "end_date"
-    t.string   "leader"
+    t.date     "end_date",                                                 null: false
+    t.string   "leader",                                                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "ascestry"
+    t.string   "ancestry"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth"
+    t.integer  "children_count"
+    t.integer  "position"
   end
+
+  add_index "communities", ["depth"], name: "index_communities_on_depth"
+  add_index "communities", ["lft"], name: "index_communities_on_lft"
+  add_index "communities", ["name"], name: "index_communities_on_name", unique: true
+  add_index "communities", ["parent_id"], name: "index_communities_on_parent_id"
+  add_index "communities", ["rgt"], name: "index_communities_on_rgt"
 
   create_table "documents", force: true do |t|
     t.text     "text"

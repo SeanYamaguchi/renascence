@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 # Use pg as the database for heroku
+
+# Versioning
+gem 'semantic'
+
 group :development do
   gem 'sqlite3'
 end
@@ -65,7 +69,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'settingslogic'
-gem 'twitter' 
+gem 'twitter'
+gem 'cancancan'
 
 # Cloudinary
 gem 'cloudinary'
@@ -96,3 +101,21 @@ gem 'sitemap_generator'
 
 # For tree construction of communities
 gem 'ancestry'
+gem 'awesome_nested_set'
+gem 'acts_as_list'
+
+# For state
+gem 'aasm'
+
+# For style sheet
+gem 'compass-rails'
+gem "font-awesome-rails"
+
+gem 'rubocop', require: false
+
+gem 'bullet'
+
+gem 'byebug'
+gem 'brakeman'
+
+gem 'awesome_nested_set'

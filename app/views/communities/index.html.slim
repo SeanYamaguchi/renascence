@@ -1,5 +1,7 @@
 h1 Listing communities
 
+= link_to 'New Community', new_community_path
+
 table
   thead
     tr
@@ -11,6 +13,8 @@ table
       th Locked
       th End date
       th Leader
+      th ParentId
+      th
       th
       th
       th
@@ -26,10 +30,8 @@ table
         td = community.locked
         td = community.end_date
         td = community.leader
+        td = community.parent_id
+        td = select_tag 'parent_id', options_for_select(nested_set_options(Community) {|i| "#{'_' * i.level} #{i.name}"}), :class => "bg-color-none"
         td = link_to 'Show', community
         td = link_to 'Edit', edit_community_path(community)
         td = link_to 'Destroy', community, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Community', new_community_path

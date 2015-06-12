@@ -25,3 +25,11 @@
 body {
 	background-image : url("background.jpg");
 }
+
+.nested_communities {
+	margin-left: 10px;
+}
+
+.nested_communities .nested_communities {
+	margin-left: 200px;
+}

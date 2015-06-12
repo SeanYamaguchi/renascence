@@ -20,3 +20,6 @@ vendor/bundle
 
 # Ignore bundler gems.
 vendor/bundler
+
+# Ignore images, audios and videos
+public/uploads

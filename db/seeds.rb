@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+5.times do |i|
+	Customer.create(:name => "テスト#{i}")
+end
+
+Product.create(:name => "Railsの基礎知識", :description => "Are you okay ?")
