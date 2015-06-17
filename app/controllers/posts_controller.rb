@@ -6,12 +6,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = params[:tag].present? ? Post.tagged_with(params[:tag]) : Post.all
-    @q = @posts.search(params[:q])
-    @posts = @q.result(distinct: true).includes(:tags)
+    @posts = Post.all
+    @q = @posts.search(/.*#{params[:q]}.*/)
+    respond_with(@posts)
   end
 
   def show
+
     @post = Post.find(params[:id])
     @documents = @post.documents.all
     @document = @post.documents.build

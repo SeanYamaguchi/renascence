@@ -3,6 +3,7 @@ class Community < ActiveRecord::Base
   acts_as_list :scope => 'ancestry = \'#{ancestry}\''
   scope :ordered, :order => "ancestry_depth,position DESC"
   acts_as_nested_set
+  validates :name, :email, :purpose, :activity, :end_date, :leader, :presence => true
 
   def move_to_left_of(reference_instance)
 	transaction do

@@ -5,8 +5,8 @@
       ul
         - @community.errors.full_messages.each do |message|
           li = message
-
-  = f.hidden_field :parent_id
+  .field
+    = f.hidden_field :parent_id
   .field
     = f.label :name
     = f.text_field :name
@@ -25,7 +25,4 @@
   .field
     = f.label :leader
     = f.text_field :leader
-  .field
-    = f.label "ParentCommunityis"
-    = f.select 'parent_id', options_from_collection_for_select(Community.all, :id, :name), :class => "bg-color-none"
   .actions = f.submit

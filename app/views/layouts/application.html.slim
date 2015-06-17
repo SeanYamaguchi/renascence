@@ -72,18 +72,58 @@ html lang="en"
                   li role="presentation"= link_to "Diary", new_user_registration_path, role: "menuitem", tabindex: "-1"
                   li role="presentation"= link_to "Activity", new_user_session_path, role: "menuitem", tabindex: "-1"
                   li role="presentation"= link_to "News", user_omniauth_authorize_path(:twitter)
-    .container
-      .row
-        .col-lg-9
-          .flash= bootstrap_flash
-          = yield(:slideshow)
-          - set_meta_tags :title => 'PsaraInstitute'
-          - set_meta_tags :description => ''
-          - set_meta_tags :keywords => ''
-          - set_meta_tags :canonical => ''
-          = yield
-        .col-lg-3
 
-      footer.navbar-fixed-bottom
-        .text-right
-          p Copyrights (C) 2015 Renascence Ltd. All rights reserved.
+    .container
+      = yield(:slideshow)
+      - set_meta_tags :title => 'PsaraInstitute'
+      - set_meta_tags :description => ''
+      - set_meta_tags :keywords => ''
+      - set_meta_tags :canonical => ''
+      = yield
+      .col-lg-3
+
+    #container-fluid
+      row.row-offcanvas.row-offcanvas-left  
+        .col-sm-3.col-md-2.sidebar-offcanvas#sidebar role="navigation"
+            ul.nav.nav-sidebar
+              li.active
+                a href="#"Overview
+              li
+                a href="#"Reports
+              li
+                a href="#"Analytics
+              li
+                a href="#"Export
+            ul.nav.nav-sidebar
+              li
+                a href="" Nav item
+              li
+                a href="" Nav item again
+              li
+                a href="" One more nav
+              li
+                a href="" Another nav item
+              li
+                a href="" More navigation
+            ul.nav.nav-sidebar
+              li
+                a href="" Nav item again
+              li 
+                a href="" One more nav
+              li
+                a href="" Another nav item
+        .col-sm-9.col-md-10.main
+          p.visible-xs
+            button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"
+              i.glyphicon.glyphicon-chevron-left
+        #page-content-wrapper
+          #container-fluid
+            .row
+              .col-lg-12
+                h1 Simple Sidebar
+                #page-content-wrapper
+                  a.btn.btn-default#menu-toggle href="#menu-toggle"　Toggle Menu
+
+    footer.navbar-fixed-bottom
+      .text-right
+        p Copyrights (C) 2015 Renascence Ltd. All rights reserved.

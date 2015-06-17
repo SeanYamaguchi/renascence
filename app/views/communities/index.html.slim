@@ -1,5 +1,20 @@
 h1 Listing communities
 
+= link_to 'コミュニティを作成する', new_community_path, :class => "btn btn-default"
+
+.container.well
+  = search_form_for @q do |f|
+
+    .row
+      .col-lg-6
+        .input-group
+          span.input-group-btn
+            button.btn.btn-default type="button" コミュニティ名
+          = f.search_field :name, class: "form-control", placeholder: "Search for ..."
+      .col-lg-6
+        .input-group.input-group-btn type="button"
+          = f.submit class: "form-control btn-primary btn", placeholder: "検索"
+
 = link_to 'New Community', new_community_path
 
 table
@@ -18,6 +33,7 @@ table
       th
       th
       th
+      th
 
   tbody
     - @communities.each do |community|
@@ -31,7 +47,8 @@ table
         td = community.end_date
         td = community.leader
         td = community.parent_id
-        td = select_tag 'parent_id', options_for_select(nested_set_options(Community) {|i| "#{'_' * i.level} #{i.name}"}), :class => "bg-color-none"
+        td = select_tag 'parent_id', options_for_select(nested_set_options(Community) {|i| "#{'_' * i.level} #{i.name}"}), :class => "bg-color-none form-contorl"
+        td = link_to "\"#{community.name}\"のChildCommunityを作る", new_community_path(:parent_id => community.id)
         td = link_to 'Show', community
         td = link_to 'Edit', edit_community_path(community)
         td = link_to 'Destroy', community, data: {:confirm => 'Are you sure?'}, :method => :delete

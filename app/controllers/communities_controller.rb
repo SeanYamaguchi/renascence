@@ -5,6 +5,8 @@ class CommunitiesController < ApplicationController
 
   def index
     @communities = Community.all
+    @q = @communities.search(params[:q])
+    @communities = @q.result
     respond_with(@communities)
   end
 
