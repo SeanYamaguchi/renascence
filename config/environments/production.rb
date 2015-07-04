@@ -56,11 +56,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'renascence.herokuapp.com/'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :address => 'smtp.sendgrid.net',
-  :port => 587,
+  :address => 'smtp.mandrillapp.com',
+  :port => 25,
   :authentication => "login",
   :user_name => 'app38502952@heroku.com',
-  :password => 'kbqqyikp1540',
+  :password => 'mXqUyIzm1PILwIROVnnbRQ',
   :domain => 'heroku.com',
   :enable_starttls_auto => true
 }
