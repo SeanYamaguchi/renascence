@@ -61,7 +61,7 @@ Rails.application.configure do
   :authentication => "plain",
   :user_name => 'app38502952@heroku.com',
   :password => 'kbqqyikp1540',
-  :domain => 'renascence.herokuapp.com/',
+  :domain => 'heroku.com',
   :enable_starttls_auto => true
 }
 end
