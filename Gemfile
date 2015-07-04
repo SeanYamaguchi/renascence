@@ -93,3 +93,5 @@ gem 'gon'
 # SEO
 gem 'meta-tags'
 gem 'sitemap_generator'
+
+gem 'closure_tree'
