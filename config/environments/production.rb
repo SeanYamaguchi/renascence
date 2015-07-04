@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.assets.initialize_on_precompile = false
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -54,12 +55,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'psara-institute.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :address => 'smtp.sendgrid.new',
-  :port => '25',
+  :address => 'smtp.sendgrid.net',
+  :port => '587',
   :authentication => "plain",
-  :user_name => 'app34862435@heroku.com',
-  :password => 'kbrhc1jk',
-  :domain => 'muumuu-domain.com',
+  :user_name => 'app38502952@heroku.com',
+  :password => 'kbqqyikp1540',
+  :domain => 'heroku.com',
   :enable_starttls_auto => true
 }
 end

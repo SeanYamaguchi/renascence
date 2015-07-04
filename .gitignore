@@ -20,3 +20,5 @@ vendor/bundle
 
 # Ignore bundler gems.
 vendor/bundler
+
+/public/assets/*
