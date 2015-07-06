@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:show, :index]
+  before_action :authenticate_community!
   before_action :set_blog, only: [:edit, :update, :destroy]
   before_action :set_blog_tags_to_gon, only: [:edit]
 

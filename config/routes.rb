@@ -2,6 +2,7 @@ require 'resque/server'
 
 Rails.application.routes.draw do
 
+  devise_for :communities
   resources :communities
 
   resources :blogs
