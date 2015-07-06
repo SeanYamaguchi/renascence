@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150704055357) do
+ActiveRecord::Schema.define(version: 20150706071130) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -68,6 +68,23 @@ ActiveRecord::Schema.define(version: 20150704055357) do
     t.datetime "updated_at"
     t.integer  "tag"
     t.integer  "parent_id"
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+  end
+
+  add_index "communities", ["email"], name: "index_communities_on_email", unique: true
+  add_index "communities", ["reset_password_token"], name: "index_communities_on_reset_password_token", unique: true
+
+  create_table "communities_users", force: true do |t|
+    t.integer "community_id"
+    t.integer "user_id"
   end
 
   create_table "documents", force: true do |t|

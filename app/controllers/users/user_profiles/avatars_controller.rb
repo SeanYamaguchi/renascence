@@ -1,5 +1,6 @@
 class Users::UserProfiles::AvatarsController < ApplicationController
   before_action :set_users_user_profiles_avatar, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin_user!, only: :index
 
   respond_to :html
 

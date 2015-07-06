@@ -37,12 +37,12 @@ html lang="en"
             ul.nav.navbar-nav.dropdown
               li.head-link-1= link_to image_tag("renascence.png", width: 25, height: 20, alt: "Brand")
               li.head-link-1= link_to "Renascence", root_path
-              li.head-link-2= link_to "News", posts_path
-              li.head-link-3= link_to "運営日記", blogs_path
+              li.head-link-3= link_to "Articles", blogs_path
               li.head-link-4= link_to "Vision", static_pages_logo_path
               li.head-link-5= link_to "Activity", static_pages_job_path
               li.head-link-6= link_to "お問い合わせ", inquiry_path
               - if current_user
+                li.head-link-7= link_to "My Page", users_user_profiles_avatar_path(:id => session[:user_id])
                 li.head_link-6= link_to "ログアウト", logout_path
               - else
                 li.dropdown
